@@ -20,22 +20,20 @@ const list = [
   }
 ];
 
-const App = () => {
-  return (
-    <div>
-      <h1>My Hacker Stories</h1>
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+const App = () => (
+  <div>
+    <h1>My Hacker Stories</h1>
+    <label htmlFor="search">Search: </label>
+    <input id="search" type="text" />
 
-      <hr />
+    <hr />
 
-      <List/>
-    </div>
-  );
-};
+    <List />
+  </div>
+);
 
-const List = () => {
-  return list.map(item => {
+const List = () =>
+  list.map(item => {
     return (
       <div key={item.objectID}>
         <span>
@@ -47,6 +45,5 @@ const List = () => {
       </div>
     );
   });
-}
 
 export default App;
