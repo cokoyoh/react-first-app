@@ -21,8 +21,10 @@ const App = () => {
     }
   ];
 
+  const [searchTearm, setSearchTerm] = React.useState('');
+
   const handleChange = event => {
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
@@ -30,6 +32,10 @@ const App = () => {
       <h1>My Hacker Stories</h1>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" onChange={handleChange} />
+
+      <p>
+        Searching for <strong>{searchTearm}</strong>.
+      </p>
 
       <hr />
 
