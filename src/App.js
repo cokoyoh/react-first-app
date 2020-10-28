@@ -59,19 +59,11 @@ const Search = ({ search, onSearch }) => (
 );
 
 const List = ({ list }) =>
-  list.map(item => <Item key={item.objectID} item={item} />);
+  list.map(({ objectID, ...item }) =>
+    <Item key={objectID} {...item} />);
 
-const Item = ({
-  item: {
-    objectID,
-    url,
-    title,
-    author,
-    num_comments,
-    points
-  }
-}) => (
-    <div key={objectID}>
+const Item = ({ title, url, author, num_comments, points }) => (
+    <div>
       <span>
         <a href={url}>{title}</a>
       </span>
@@ -79,6 +71,6 @@ const Item = ({
       <span>{num_comments}</span>
       <span>{points}</span>
     </div>
-  );
+  ); 
 
 export default App;
